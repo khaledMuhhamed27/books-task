@@ -18,13 +18,3 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-// get all data
-Route::get('/books', [BookController::class, 'index'])->name('books.index');
-// get select data
-Route::get('/books/{id}', [BookController::class, 'show'])->name('books.show');
-// create new data
-Route::post('/books', [BookController::class, 'store'])->name('books.store');
-// update data
-Route::put('/books/{id}', [BookController::class, 'update'])->name('books.update');
-// delete select data
-Route::delete('/books/{id}', [BookController::class, 'delete'])->name('books.delete');

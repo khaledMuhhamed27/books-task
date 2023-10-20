@@ -14,9 +14,8 @@ class BookController extends Controller
         return response()->json($books);
     }
     // show function
-    public function show($id)
+    public function show(Book $books)
     {
-        $books = Book::find($id);
         return response()->json($books);
     }
     // store function
@@ -26,17 +25,21 @@ class BookController extends Controller
         return response()->json($books);
     }
     // update function
-    public function update(Request $request, $id)
+    public function update(Request $request, Book $books)
     {
-        $books = Book::find($id);
         $books->update($request->all());
         return response()->json($books);
     }
     // delete function
-    public function delete($id)
+    public function delete(Book $books)
     {
-        $books = Book::find($id);
         $books->delete();
         return response()->json($books);
     }
+    // // search function
+    // public function search()
+    // {
+    //     $books = Book::where()->get();
+    //     return response()->json($books);
+    // }
 }
