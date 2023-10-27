@@ -42,4 +42,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    // function for forginId Key
+    public function books()
+    {
+        return $this->hasMany(Book::class);
+    }
 }

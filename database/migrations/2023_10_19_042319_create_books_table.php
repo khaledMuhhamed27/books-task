@@ -17,6 +17,9 @@ return new class extends Migration
             $table->string('author');
             $table->text('summary');
             $table->date('published_date');
+            // forign key prefer to cars table
+            // ->constrained()->onDelete('cascade'); معناها انو كل ما بتحذف يوزر راح ينمسح كلشي متعلق به
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
